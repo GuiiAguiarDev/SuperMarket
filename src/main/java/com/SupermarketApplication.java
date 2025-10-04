@@ -52,11 +52,37 @@ public class SupermarketApplication {
 
 		}
 
-		
-		
-		for(Product p : listProducts ) {
-			System.out.println("Nome do produto "+p.getName() + " - "  +"Estoque "+ p.getEstoque());
+		System.out.println("---------------------------------");
+		System.out.println("---------------------------------");
+		System.out.println("---------------------------------");
+		System.out.println("---------------------------------");
+
+		Invoice invoice = new Invoice();
+		invoice.setInvoiceNumber(15712);
+		// Como nao temos o set na list pq é mal uso fazemos assim com for
+
+		System.out.println("Area do Cliente, vamos comprar");
+		System.out.println("");
+		for (Product p : listProducts) {
+			System.out.println("Nome do produto " + p.getName() + " - " + "Estoque " + p.getEstoque());
 		}
+		System.out.println("");
+
+		int respClient = 1;
+		while (respClient == 1) {
+			System.out.println("Qual nome do produto gostaria de comprar");
+			String nameChanged = sc.next();
+
+			System.out.println("Qual a quantidade do produto");
+			int qtdProduct = sc.nextInt();
+
+			invoiceService.comprar(nameChanged, qtdProduct, invoice);
+
+			System.out.println("Deseja comprar mais produtos 1-sim 2- nao");
+			respClient = sc.nextInt();
+
+		}
+
 		sc.close();
 
 	}
