@@ -22,7 +22,7 @@ public class Invoice {
 	@Column(name = "TB_INVOICE_NUMBER")
 	private Integer InvoiceNumber;
 	@Column(name = "TB_PRICE")
-	private Double price;
+	private double price;
 
 	@OneToMany
 	private List<Product> products = new ArrayList<>();
@@ -43,11 +43,11 @@ public class Invoice {
 		InvoiceNumber = invoiceNumber;
 	}
 
-	public Double getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(Double price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 

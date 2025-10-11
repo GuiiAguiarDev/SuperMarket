@@ -58,7 +58,9 @@ public class SupermarketApplication {
 		System.out.println("---------------------------------");
 
 		Invoice invoice = new Invoice();
-		invoice.setInvoiceNumber(15712);
+		// Gerando numero aleatorio para a nota fiscal
+		int numberRandom = 1 + (int) (Math.random() * 9000);
+		invoice.setInvoiceNumber(numberRandom);
 		// Como nao temos o set na list pq é mal uso fazemos assim com for
 
 		System.out.println("Area do Cliente, vamos comprar");

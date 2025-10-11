@@ -85,7 +85,7 @@ public class InvoiceService {
 			if (!invoice.getProducts().contains(produtoEscolhdo)) {
 				invoice.addProducts(produtoEscolhdo);
 				double priceInvoice = qtdProductBuyed * produtoEscolhdo.getPrice();
-				double princeInvoiceFinal = priceInvoice + priceInvoice;
+				double princeInvoiceFinal = priceInvoice + invoice.getPrice();
 				invoice.setPrice(princeInvoiceFinal);
 			}
 			// Salvamos aqui a notaSansungBook2
